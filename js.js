@@ -21,9 +21,14 @@ function Calculator(params) {
 
     if (params == '=') {
 
-        if (resultado !== '') {
-            document.getElementById('resultado').innerHTML = eval(resultado.innerHTML);
+        if (resultado !== 'Error') {
+            let aux = eval(resultado.innerHTML);
+            if (aux == Infinity || aux == -Infinity || isNaN(aux) || aux == undefined || aux == null) {
+                resultado.innerHTML = document.getElementById('resultado').innerHTML = '';
+            } else {
+                resultado.innerHTML = aux;
+            }
+
         }
     }
-
 }
