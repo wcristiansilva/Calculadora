@@ -21,14 +21,17 @@ function Calculator(params) {
 
     if (params == '=') {
 
-        if (resultado !== 'Error') {
-            let aux = eval(resultado.innerHTML);
-            if (aux == Infinity || aux == -Infinity || isNaN(aux) || aux == undefined || aux == null) {
-                resultado.innerHTML = document.getElementById('resultado').innerHTML = '';
-            } else {
-                resultado.innerHTML = aux;
-            }
-
+        try {
+            if (resultado !== 'Error') {
+                let aux = eval(resultado.innerHTML);
+                if (aux == Infinity || aux == -Infinity || isNaN(aux) || aux == undefined || aux == null) {
+                    resultado.innerHTML = document.getElementById('resultado').innerHTML = '';
+                } else {
+                    resultado.innerHTML = aux;
+                }
+            }    
+        } catch (error) {
+            resultado.innerHTML = document.getElementById('resultado').innerHTML = '';
         }
     }
 }
