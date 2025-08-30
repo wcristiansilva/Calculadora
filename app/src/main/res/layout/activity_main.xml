@@ -27,6 +27,7 @@
         android:padding="10dp"
         android:text="0"
         android:textAlignment="textEnd"
+        android:textColor="#8A8A8A"
         android:textSize="60sp" />
 
     <include
